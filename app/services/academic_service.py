@@ -5,7 +5,7 @@ from typing import List, Optional
 
 from starlette.exceptions import HTTPException
 from app.models.academic import Topic, StudentAssessment
-from app.schemas.academic import TopicCreate, BatchRatingsRequest
+from app.schemas.academic import TopicCreate, BatchRatingsRequest, TopicUpdateRequest
 
 from app.models.student import Student
 from app.models.user import User
