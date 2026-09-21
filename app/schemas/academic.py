@@ -47,3 +47,24 @@ class AssessmentResponse(BaseModel):
 class SyncPushPayload(BaseModel):
     topics: List[TopicCreate] = []
     ratings_batches: List[BatchRatingsRequest] = []
+
+class StudentRatingDetail(BaseModel):
+    id: str
+    teacher_id: int
+    teacher_name: str
+    subject: str
+    topic_title: str
+    criterion: str
+    rating: float
+    updated_at: str
+
+class TodayStudentRatingsGroup(BaseModel):
+    student_regd: str
+    student_name: str
+    class_name: Optional[str] = None
+    roll_no: Optional[str] = None
+    contact_no: Optional[str] = None
+    ratings: List[StudentRatingDetail]
+
+class TopicUpdateRequest(BaseModel):
+    description: Optional[str] = None
